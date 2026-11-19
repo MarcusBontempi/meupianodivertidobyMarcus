@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Teclado do Zero · Módulo 0</title>
+  <meta name="description" content="Aulas de teclado para iniciantes: topografia, graus, escala maior, campo harmônico e exercícios interativos.">
+  <meta name="theme-color" content="#0f1117">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1117'/%3E%3Crect x='4' y='6' width='7' height='20' rx='1.5' fill='%23ece8df'/%3E%3Crect x='12.5' y='6' width='7' height='20' rx='1.5' fill='%23f0b429'/%3E%3Crect x='21' y='6' width='7' height='20' rx='1.5' fill='%23ece8df'/%3E%3Crect x='9' y='6' width='4.5' height='12' rx='1' fill='%23161a24'/%3E%3Crect x='18.5' y='6' width='4.5' height='12' rx='1' fill='%23161a24'/%3E%3C/svg%3E">
+
+  <!-- Fontes (único recurso externo permitido: Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Mrs+Saint+Delafield&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== AVISO DE CELULAR EM PÉ =====
+       Aparece só em telefone/tablet na vertical (regra no style.css, seção CELULAR).
+       Para mudar o texto, edite aqui. -->
+  <div class="girar" role="alertdialog" aria-live="assertive" aria-label="Gire o celular">
+    <div class="girar-caixa">
+      <div class="girar-icone" aria-hidden="true"><span class="girar-tel"><i></i><i></i><i></i><i></i><i></i></span></div>
+      <p class="girar-titulo">Gire o celular</p>
+      <p class="girar-texto">Veja o site na <strong>horizontal</strong> para uma melhor experiência.</p>
+    </div>
+  </div>
+
+  <!-- ===== TELA DE LOADING ===== (some sozinha via main.js) -->
+  <div id="loading" class="loading" role="status" aria-label="Carregando">
+    <div class="piano-anim" aria-hidden="true">
+      <span class="pk"></span><span class="pk"></span><span class="pk"></span><span class="pk"></span>
+      <span class="pk"></span><span class="pk"></span><span class="pk"></span><span class="pk"></span>
+      <span class="pb" style="--x:1"></span><span class="pb" style="--x:2"></span>
+      <span class="pb" style="--x:4"></span><span class="pb" style="--x:5"></span><span class="pb" style="--x:6"></span>
+    </div>
+    <div class="loading-nome">Teclado do Zero</div>
+    <div class="loading-sub">afinando as teclas…</div>
+  </div>
+
+  <!-- ===== CABEÇALHO ===== (o menu é montado pelo main.js a partir do config.js) -->
+  <header class="topo" id="topo">
+    <div class="topo-linha">
+      <a class="marca" href="#inicio">
+        <span class="marca-kicker" id="marca-kicker">MÓDULO 0 · START</span>
+        <span class="marca-nome" id="marca-nome">Teclado do Zero</span>
+      </a>
+      <div class="notacao" role="group" aria-label="Notação dos nomes das notas">
+        <button type="button" data-notacao="sol">Dó Ré Mi</button>
+        <button type="button" data-notacao="cif">C D E</button>
+      </div>
+    </div>
+    <nav class="abas" id="abas" aria-label="Aulas"></nav>
+  </header>
+
+  <!-- ===== CONTEÚDO ===== (cada aula vira uma <section> aqui dentro) -->
+  <main id="app" class="app" tabindex="-1"></main>
+
+  <!-- ===== RODAPÉ ===== (textos vêm do config.js) -->
+  <footer class="rodape">
+    <div class="assinatura" id="assinatura">Marcus Bontempi</div>
+    <div class="rodape-papel" id="rodape-papel">Instrutor · Teclado do Zero</div>
+    <div class="rodape-versao" id="rodape-versao">Módulo 0 · Start · v1</div>
+  </footer>
+
+  <noscript><p class="noscript">Este site precisa de JavaScript ligado para funcionar.</p></noscript>
+
+  <!--
+    ORDEM DOS SCRIPTS IMPORTA:
+    1. config  → textos editáveis
+    2. core    → utilitários compartilhados
+    3. theory  → nomes de notas, escalas, acordes
+    4. audio   → som (Web Audio API)
+    5. keyboard→ componente de teclado
+    6. lessons → uma aula por arquivo (para adicionar uma aula, inclua o <script> dela aqui)
+    7. main    → navegação, loading, toggle de notação (sempre por último)
+  -->
+  <script src="js/config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/theory.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/keyboard.js"></script>
+  <script src="js/lessons/inicio.js"></script>
+  <script src="js/lessons/aula-1-topografia.js"></script>
+  <script src="js/lessons/aula-2-graus.js"></script>
+  <script src="js/lessons/aula-3-escala-campo.js"></script>
+  <script src="js/lessons/aula-4-exercicios.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
